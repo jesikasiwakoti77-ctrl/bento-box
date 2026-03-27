@@ -1,95 +1,79 @@
 :root {
-    --bg-color: #fdf6f0; /* Soft cream */
-    --card-bg: #ffffff;
-    --accent: #eecaca; /* Dusty Rose */
-    --text: #4a4a4a;
-    --radius: 24px;
+    --bg: #faf9f6; /* Off-white linen */
+    --accent: #d4a373; /* Muted gold/tan */
+    --pink: #fce4ec; /* Soft pink */
+    --text: #333;
+    --radius: 30px;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: var(--bg-color);
+    background-color: var(--bg);
     font-family: 'Inter', sans-serif;
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
     color: var(--text);
+    line-height: 1.6;
+    padding: 40px 20px;
 }
 
-/* The Grid Layout */
-.bento-container {
+.container { max-width: 1100px; margin: 0 auto; }
+
+header { text-align: center; margin-bottom: 50px; }
+header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 10px; }
+
+/* THE BENTO GRID */
+.bento-grid {
     display: grid;
-    max-width: 1000px;
-    width: 100%;
-    /* 4 Columns for Desktop */
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 180px;
-    gap: 16px;
+    grid-auto-rows: 200px;
+    gap: 20px;
 }
 
-/* Individual Card Styling */
-.item {
-    background: var(--card-bg);
+/* CARD BASICS */
+.card {
+    background: white;
     border-radius: var(--radius);
     overflow: hidden;
     position: relative;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: var(--transition);
 }
 
-.item:hover {
-    transform: translateY(-5px);
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
 }
 
-/* Sizing Logic */
-.item-large { grid-column: span 2; grid-row: span 2; }
-.item-tall { grid-row: span 2; }
-.item-wide { grid-column: span 2; }
-.item-medium { grid-column: span 1; grid-row: span 1; }
+/* SIZING */
+.card-large { grid-column: span 2; grid-row: span 2; }
+.card-wide { grid-column: span 2; }
+.card-tall { grid-row: span 2; }
+.card-medium { grid-column: span 1; grid-row: span 1; }
 
-/* Media Content Styling */
-img, video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+/* MEDIA HANDLING */
+img, video { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+.card:hover img { scale: 1.05; }
+
+/* SPECIAL CARDS */
+.pink-bg { background-color: var(--pink); padding: 30px; display: flex; align-items: center; justify-content: center; text-align: center; }
+.quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; }
+
+.label { position: absolute; bottom: 15px; left: 20px; background: rgba(255,255,255,0.7); backdrop-filter: blur(5px); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+
+.card-overlay { position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.4)); display: flex; align-items: flex-end; padding: 25px; color: white; font-weight: 600; font-size: 1.2rem; }
+
+/* REVEAL BOX */
+.message-box { cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 20px; text-align: center; background: #e9edc9; }
+.reveal-content .back { display: none; font-weight: 600; color: #606c38; }
+.message-box:active .front { display: none; }
+.message-box:active .back { display: block; }
+
+/* RESPONSIVE (For Mobile) */
+@media (max-width: 850px) {
+    .bento-grid { grid-template-columns: repeat(2, 1fr); }
+    .card-large { grid-column: span 2; }
+    header h1 { font-size: 2rem; }
 }
 
-/* Quote Box Style */
-.quote-box {
-    background-color: var(--accent);
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.4rem;
-}
-
-/* Secret Note Logic */
-.note {
-    background: #fff;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-.hidden-text {
-    opacity: 0;
-    font-weight: bold;
-    transition: 0.3s;
-    color: var(--accent);
-}
-.note:hover .hidden-text { opacity: 1; }
-.note:hover span { display: none; }
-
-/* Responsive for Mobile */
-@media (max-width: 768px) {
-    .bento-container {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 150px;
-    }
-    .item-large { grid-column: span 2; }
-}
+footer { text-align: center; margin-top: 60px; font-size: 0.8rem; opacity: 0.6; }

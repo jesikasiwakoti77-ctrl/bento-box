@@ -3,49 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Sister</title>
+    <title>For My Best Friend & Sister</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for that aesthetic look -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+    <!-- Google Fonts: A mix of elegant serif and clean sans-serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="bento-container">
-        <!-- 1. Hero Image / Big Memory -->
-        <div class="item item-large main-photo">
-            <img src="your-photo-1.jpg" alt="Sisterhood">
-            <div class="overlay">Best Friends Since Day 1</div>
+    <div class="container">
+        <header>
+            <h1>To my favorite human.</h1>
+            <p>A little space for our big memories.</p>
+        </header>
+
+        <div class="bento-grid">
+            <!-- 1. HERO IMAGE (Main memory) -->
+            <div class="card card-large">
+                <img src="assets/hero.webp" alt="Us">
+                <div class="card-overlay">The best days.</div>
+            </div>
+
+            <!-- 2. SHORT LOOPING VIDEO -->
+            <div class="card card-tall">
+                <video autoplay muted loop playsinline>
+                    <source src="assets/memory.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <!-- 3. A SWEET QUOTE -->
+            <div class="card card-text pink-bg">
+                <p class="quote">"Side by side or miles apart, we are sisters connected by the heart."</p>
+            </div>
+
+            <!-- 4. CHILDHOOD PHOTO -->
+            <div class="card card-medium">
+                <img src="assets/childhood.webp" alt="Then">
+                <div class="label">Circa 2005</div>
+            </div>
+
+            <!-- 5. SPOTIFY / MUSIC BOX -->
+            <!-- REPLACE THE LINK BELOW WITH YOUR OWN SPOTIFY EMBED CODE IF YOU WANT -->
+            <div class="card card-wide spotify-box">
+                <div class="music-info">
+                    <span>Our Anthem</span>
+                    <h3>The Soundtrack of Us 🎵</h3>
+                </div>
+            </div>
+
+            <!-- 6. INTERACTIVE MESSAGE -->
+            <div class="card card-small message-box">
+                <div class="reveal-content">
+                    <span class="front">Tap for a secret...</span>
+                    <span class="back">I'll always be your #1 fan! 💖</span>
+                </div>
+            </div>
+            
+            <!-- 7. A SMALL AESTHETIC IMAGE -->
+            <div class="card card-small">
+                <img src="assets/aesthetic.webp" alt="Vibe">
+            </div>
         </div>
 
-        <!-- 2. A Sweet Quote -->
-        <div class="item item-small quote-box">
-            <p>"A sister is a little bit of childhood that can never be lost."</p>
-        </div>
-
-        <!-- 3. Mini Video (Auto-playing loop) -->
-        <div class="item item-tall video-box">
-            <video autoplay muted loop playsinline>
-                <source src="your-video.mp4" type="video/mp4">
-            </video>
-        </div>
-
-        <!-- 4. Childhood Throwback -->
-        <div class="item item-medium childhood-photo">
-            <img src="childhood.jpg" alt="Baby photos">
-        </div>
-
-        <!-- 5. Current Mood / Music Widget -->
-        <div class="item item-wide music-box">
-            <span class="music-label">Currently Playing:</span>
-            <h3>Our Favorite Song 🎵</h3>
-            <!-- You can embed a Spotify iframe here -->
-        </div>
-
-        <!-- 6. Small Note/Secret Message -->
-        <div class="item item-small note">
-            <span>Tap for a secret...</span>
-            <div class="hidden-text">I'm so proud of you!</div>
-        </div>
+        <footer>
+            <p>Made with love by [Your Name] • 2024</p>
+        </footer>
     </div>
 
 </body>

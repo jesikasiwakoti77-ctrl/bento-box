@@ -1,7 +1,7 @@
 :root {
-    --bg: #faf9f6; /* Off-white linen */
-    --accent: #d4a373; /* Muted gold/tan */
-    --pink: #fce4ec; /* Soft pink */
+    --bg: #faf9f6; 
+    --accent: #d4a373;
+    --pink: #fce4ec;
     --text: #333;
     --radius: 30px;
     --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -13,16 +13,14 @@ body {
     background-color: var(--bg);
     font-family: 'Inter', sans-serif;
     color: var(--text);
-    line-height: 1.6;
     padding: 40px 20px;
 }
 
 .container { max-width: 1100px; margin: 0 auto; }
 
 header { text-align: center; margin-bottom: 50px; }
-header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 10px; }
+header h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 10px; }
 
-/* THE BENTO GRID */
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -30,7 +28,6 @@ header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bott
     gap: 20px;
 }
 
-/* CARD BASICS */
 .card {
     background: white;
     border-radius: var(--radius);
@@ -45,35 +42,39 @@ header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bott
     box-shadow: 0 12px 30px rgba(0,0,0,0.1);
 }
 
-/* SIZING */
 .card-large { grid-column: span 2; grid-row: span 2; }
 .card-wide { grid-column: span 2; }
 .card-tall { grid-row: span 2; }
-.card-medium { grid-column: span 1; grid-row: span 1; }
 
-/* MEDIA HANDLING */
-img, video { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
-.card:hover img { scale: 1.05; }
+img, video { width: 100%; height: 100%; object-fit: cover; }
 
-/* SPECIAL CARDS */
 .pink-bg { background-color: var(--pink); padding: 30px; display: flex; align-items: center; justify-content: center; text-align: center; }
-.quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; }
+.quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.3rem; }
 
-.label { position: absolute; bottom: 15px; left: 20px; background: rgba(255,255,255,0.7); backdrop-filter: blur(5px); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+.label { position: absolute; bottom: 15px; left: 20px; background: rgba(255,255,255,0.8); backdrop-filter: blur(5px); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
 
-.card-overlay { position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.4)); display: flex; align-items: flex-end; padding: 25px; color: white; font-weight: 600; font-size: 1.2rem; }
+.card-overlay { position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.5)); display: flex; align-items: flex-end; padding: 25px; color: white; font-weight: 600; font-size: 1.5rem; }
 
-/* REVEAL BOX */
-.message-box { cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 20px; text-align: center; background: #e9edc9; }
+.message-box { 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 20px; 
+    text-align: center; 
+    background: #e9edc9; 
+}
 .reveal-content .back { display: none; font-weight: 600; color: #606c38; }
-.message-box:active .front { display: none; }
-.message-box:active .back { display: block; }
+.message-box:hover .front { display: none; }
+.message-box:hover .back { display: block; }
 
-/* RESPONSIVE (For Mobile) */
+.music-info { padding: 30px; }
+.music-info span { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); }
+
 @media (max-width: 850px) {
     .bento-grid { grid-template-columns: repeat(2, 1fr); }
     .card-large { grid-column: span 2; }
-    header h1 { font-size: 2rem; }
+    header h1 { font-size: 2.2rem; }
 }
 
-footer { text-align: center; margin-top: 60px; font-size: 0.8rem; opacity: 0.6; }
+footer { text-align: center; margin-top: 60px; font-size: 0.8rem; opacity: 0.5; }
